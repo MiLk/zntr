@@ -13,7 +13,7 @@ var bar = new Bar();
 
 // TCP server
 var Server = mage.require('server');
-var server = new Server({port: 8000});
+var server = new Server({port: 8001});
 
 // Receive mage events
 mage.events.on('uncaughtExeption', () => {
