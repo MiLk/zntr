@@ -15,6 +15,14 @@ var bar = new Bar();
 var Server = mage.require('server');
 var server = new Server({port: 8001});
 
+var util = require('util');
+server.on('packet', function (packet) {
+  console.log('packet received:', util.inspect(packet, {
+      depth: 4,
+      colors: true
+    }), packet.body.toString());
+});
+
 // Receive mage events
 mage.events.on('uncaughtExeption', () => {
   if (err) {
